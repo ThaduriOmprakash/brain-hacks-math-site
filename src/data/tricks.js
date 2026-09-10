@@ -7,19 +7,78 @@ export const categories = [
     tricks: [
       {
         slug: 'multiply-by-11',
-        title: 'Multiply any 2-digit number by 11',
-        summary: 'Split the digits, drop their sum in the middle.',
+        title: 'Multiply any number by 11',
+        summary: 'Use neighboring digit sums to multiply whole numbers and decimals by 11 in your head.',
         steps: [
-          'Take the two digits of your number apart, say a and b.',
-          'Add them together: a + b.',
-          'Slide that sum between the original digits.',
-          'If the sum is 10 or more, carry the 1 into the first digit.',
+          'For a two-digit number, leave one space between the digits.',
+          'Add the two digits and write the sum in that space.',
+          'If the sum is 10 or more, write its last digit and carry 1 to the left.',
+          'For longer numbers, bring down the outside digits and add each neighboring pair from right to left.',
         ],
         example: {
           problem: '11 × 47',
           working: '4 and 7 → 4+7 = 11 → carry 1 into the 4 → 5, 1, 7',
           answer: '517',
         },
+        youtubeId: '',
+        introduction:
+          'Multiplying by 11 looks like a job for long multiplication, but the number 11 has a useful place-value pattern. Instead of multiplying every digit separately, keep the outside digits and add the neighbors in between. The method works for two-digit numbers, longer whole numbers, and decimals.',
+        workedExamples: [
+          {
+            problem: '35 × 11',
+            steps: ['Keep the outside digits: 3 _ 5.', 'Add the neighbors: 3 + 5 = 8.', 'Fill the space: 385.'],
+            answer: '385',
+          },
+          {
+            problem: '78 × 11',
+            steps: ['Keep the outside digits: 7 _ 8.', 'Add the neighbors: 7 + 8 = 15.', 'Write 5 in the middle and carry 1 to 7: 858.'],
+            answer: '858',
+          },
+          {
+            problem: '243 × 11',
+            steps: ['Bring down 3.', 'Add neighboring digits: 4 + 3 = 7, then 2 + 4 = 6.', 'Bring down 2: 2673.'],
+            answer: '2673',
+          },
+          {
+            problem: '687 × 11',
+            steps: ['Bring down 7.', '8 + 7 = 15: write 5 and carry 1.', '6 + 8 + 1 = 15: write 5 and carry 1.', '6 + 1 = 7, giving 7557.'],
+            answer: '7557',
+          },
+        ],
+        extensions: [
+          {
+            title: 'Longer numbers',
+            body: 'For 51,243 × 11, start with the rightmost digit and add neighboring pairs: 3, 4 + 3 = 7, 2 + 4 = 6, 1 + 2 = 3, 5 + 1 = 6, then bring down 5. The result is 563,673.',
+          },
+          {
+            title: 'Decimals',
+            body: 'Ignore the decimal point while calculating. For 4.2 × 11, solve 42 × 11 = 462, then restore the one decimal place: 46.2.',
+          },
+        ],
+        commonMistakes: [
+          'Writing a two-digit neighbor sum in one place instead of carrying its first digit to the left.',
+          'Forgetting to include a carry in the next neighboring sum.',
+          'Adding digits that are not next to each other in a longer number.',
+          'Putting a decimal point back in the wrong position after solving the whole-number version.',
+        ],
+        faqs: [
+          {
+            question: 'Why does the multiply-by-11 pattern work?',
+            answer: 'Writing a number as place values and multiplying by 10 + 1 creates each original digit plus its neighboring digit. That is why the middle places become sums of adjacent digits.',
+          },
+          {
+            question: 'What if two neighboring digits add to 10 or more?',
+            answer: 'Write the last digit of the sum in the current place and carry the extra 1 to the next place on the left. Include that carry in the next sum.',
+          },
+          {
+            question: 'Can I use this trick for a five-digit number?',
+            answer: 'Yes. Bring down the last digit, add each neighboring pair from right to left, and bring down the first digit at the end. Carry whenever a pair reaches 10 or more.',
+          },
+          {
+            question: 'Does the method work with decimals?',
+            answer: 'Yes. Temporarily remove the decimal point, multiply the resulting whole number by 11, and restore the original number of decimal places in the answer.',
+          },
+        ],
       },
       {
         slug: 'cross-multiplication',
