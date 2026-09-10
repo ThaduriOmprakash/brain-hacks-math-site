@@ -32,8 +32,12 @@ export default function Footer() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
         <div className="col-span-2 md:col-span-1">
           <span className="font-heading text-2xl">Brain Hacks Math</span>
-          <p className="mt-3 text-pencil/70 max-w-[24ch]">
-            Calculator-free tricks, scribbled down and made simple.
+          <p className="mt-3 text-pencil/70 max-w-[24ch] leading-relaxed">
+            MATH MADE EASY
+            <br />
+            TRICKS THAT STICK
+            <br />
+            SKILLS FOR LIFE
           </p>
         </div>
         {columns.map((col) => (
@@ -56,7 +60,7 @@ export default function Footer() {
           </div>
         ))}
       </div>
-      <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-pencil/60">
+      <div className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2 text-center text-sm text-pencil/60">
         <Link to="/privacy" className="underline decoration-transparent underline-offset-4 hover:decoration-pencil">
           Privacy Policy
         </Link>
@@ -64,8 +68,8 @@ export default function Footer() {
           Terms of Use
         </Link>
       </div>
-      <p className="mt-12 text-sm text-pencil/50">
-        © {new Date().getFullYear()} Brain Hacks Math. Made with a pencil, not a spreadsheet.
+      <p className="mt-12 text-center text-sm text-pencil/50">
+        © {new Date().getFullYear()} Brain Hacks Math. Made with 🖤
       </p>
     </footer>
   )
