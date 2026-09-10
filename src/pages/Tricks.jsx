@@ -35,7 +35,10 @@ export default function Tricks() {
             <div className="mt-6 grid sm:grid-cols-2 gap-5">
               {cat.tricks.map((trick, i) => (
                 <Link key={trick.slug} to={`/tricks/${cat.slug}/${trick.slug}`}>
-                  <Card rotate={i % 2 === 0 ? '-rotate-1' : 'rotate-1'} className="h-full">
+                  <Card
+                    rotate={i % 2 === 0 ? '-rotate-1' : 'rotate-1'}
+                    className="h-full hover:rotate-0 transition-transform duration-100"
+                  >
                     <h3 className="text-lg">{trick.title}</h3>
                     <p className="mt-2 text-sm text-pencil/70">{trick.summary}</p>
                     <Badge tone="white" className="mt-4 text-xs">
