@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import Card from '../components/ui/Card.jsx'
 import Button from '../components/ui/Button.jsx'
+import YouTubeVideo from '../components/YouTubeVideo.jsx'
 import { findTrick, categories } from '../data/tricks.js'
 
 export default function TrickDetail() {
@@ -21,6 +22,8 @@ export default function TrickDetail() {
 
       <h1 className="mt-6 text-4xl md:text-5xl -rotate-1">{trick.title}</h1>
       <p className="mt-3 text-lg text-pencil/80">{trick.summary}</p>
+
+      <YouTubeVideo title={trick.title} videoId={trick.youtubeId} />
 
       <Card className="mt-10" decoration="tape">
         <h2 className="text-2xl">The steps</h2>
