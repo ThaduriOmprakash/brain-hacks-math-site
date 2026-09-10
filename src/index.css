@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #fdfbf7;
+  --color-pencil: #2d2d2d;
+  --color-erased: #e5e0d8;
+  --color-marker: #ff4d4d;
+  --color-ballpoint: #2d5da1;
+  --color-postit: #fff9c4;
+
+  --font-heading: "Kalam", cursive;
+  --font-body: "Patrick Hand", cursive;
+
+  --radius-wobbly: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  --radius-wobbly-md: 60px 25px 50px 20px / 20px 50px 25px 60px;
+  --radius-wobbly-sm: 30px 12px 24px 10px / 10px 24px 12px 30px;
+}
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-paper);
+  background-image: radial-gradient(var(--color-erased) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+  color: var(--color-pencil);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-pencil);
+  line-height: 1.1;
+}
+
+/* Visible keyboard focus, hand-drawn friendly */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px dashed var(--color-ballpoint);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
